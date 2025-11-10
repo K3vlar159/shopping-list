@@ -90,8 +90,20 @@ button {
     background-color: #6b7f5e;
     color: #fff;
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    border-radius: 20px;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;    
+    line-height: 0;
+    text-align: center;
+    vertical-align: middle;
+    transform: translateY(-2px);
+    padding-bottom: 3px;
 }
 
 .submitButton:hover {
@@ -205,9 +217,13 @@ button:hover {
     min-width: 0;
   }
   
-  .submitButton {
-    width: auto;
-    padding: 12px;
+.submitButton {
+    width: 3rem;    /* 48px na mobile */
+    height: 3rem;
+    font-size: 1.5rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    flex-shrink: 0; 
   }
   
   .item-list {
