@@ -1,9 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef} from 'react'
 import './App.css'
 
 function App() {
   const[items, setItems] = useState([])
   const[inputValue, setInputValue] = useState('')
+  const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    const savedItems = localStorage.getItem('items')
+    if (savedItems) {
+      setItems(JSON.parse(savedItems))
+    }
+  }, [])
+
+   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items])
 
   const handleAddItem = (e) => {
     e.preventDefault()
