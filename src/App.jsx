@@ -57,7 +57,7 @@ const handleDeleteItem = (e,id) => {
           onChange = {(e) => setInputValue(e.target.value)}
           placeholder = "New item.." 
         />
-        <button className= "submitButton" type="submit">Add Item</button>
+        <button className= "submitButton" type="submit">Add</button>
       </form>
     {/* <p>Number of items: {items.length}</p> */}
       <ul className="item-list">

@@ -123,6 +123,8 @@ button:hover {
     transition: all 0.2s;
     line-height: 1;
     padding-top: 1px;
+    margin-left: 5px;
+    flex-shrink: 0
 }
 
 .item-list li button:hover {
@@ -145,6 +147,7 @@ button:hover {
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.2s;
+    align-items: center;
 }
 
 .item-list li:hover {
@@ -169,4 +172,81 @@ button:hover {
     cursor: pointer;
     pointer-events: none;
     accent-color: #9caf88;
+    flex-shrink: 0;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  
+  .app {
+    min-width: auto;
+    max-width: 100%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+  
+  form {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  input {
+    width: 100%;
+    min-width: 0;
+  }
+  
+  .submitButton {
+    width: auto;
+    padding: 12px;
+  }
+  
+  .item-list {
+    font-size: 18px;
+  }
+  
+  .item-list li {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .item-list li button {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+  
+  .item-content input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+  
+  body {
+    padding: 10px;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+  }
+  
+  .app {
+    padding: 15px;
+    margin: 5px;
+  }
+  
+  .item-list {
+    font-size: 16px;
+  }
 }
