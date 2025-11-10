@@ -1,0 +1,172 @@
+.app {
+    padding: 30px;
+    margin: 30px;
+    color: #3a3a3a;
+    background-color: #f3e8cd;
+    text-align: center;
+    border-radius: 60px;
+    max-width: 700px;
+    min-width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 2px 3px rgba(0, 0, 0, 0.158);
+}
+
+body {
+    background-color: #f8f5ed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+h1 {
+    color: #6b7f5e;
+    font-size: 80px;
+    font-family: 'Pangolin';
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+input {
+    border: 2px solid #c5d5b8;
+    outline: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #3a3a3a;
+    transition: all 0.2s;
+}
+
+input:focus {
+    border-color: #9caf88;
+    box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.1);
+}
+
+input::placeholder {
+    color: #6e6e6e;
+    opacity: 0.7;
+}
+
+input:hover {
+    border-color: #9caf88;
+}
+
+.item-list {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: #3a3a3a;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #df8a77;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.submitButton {
+    background-color: #6b7f5e;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+.submitButton:hover {
+    background-color: #a3b694;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background-color: #c9525c;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-list li button {
+    border: none;
+    background: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2826c;
+    border-radius: 6px;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+    padding-top: 1px;
+}
+
+.item-list li button:hover {
+    background-color: #db4729;
+    transform: scale(1.1);
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: #fdfcf9;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.item-list li:hover {
+    background-color: #e1ebd9;
+}
+
+.item-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.item-content .completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: #6e6e6e;
+}
+
+.item-content input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    pointer-events: none;
+    accent-color: #9caf88;
+}

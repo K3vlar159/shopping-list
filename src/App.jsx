@@ -2,58 +2,65 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const[tasks, setTasks] = useState([])
+  const[items, setItems] = useState([])
   const[inputValue, setInputValue] = useState('')
 
-  const handleAddTask = (e) => {
+  const handleAddItem = (e) => {
     e.preventDefault()
     if(inputValue.trim() === '') return
 
-    const newTask = {
+    const newItem = {
       id: Date.now(),
       text: inputValue,
       completed: false
     }
 
-    setTasks([...tasks, newTask])
+    setItems([...items, newItem])
     setInputValue('')
   }
 
-const handleToggleTask = (id) => {
-  setTasks(tasks.map(task => task.id === id 
-      ? { ...task, completed: !task.completed }
-      : task
+const handleToggleItem = (id) => {
+  setItems(items.map(item => item.id === id 
+      ? { ...item, completed: !item.completed }
+      : item
   ))
 }
 
-const handleDeleteTask = (e,id) => {
+const handleDeleteItem = (e,id) => {
   e.stopPropagation()
-  setTasks(tasks.filter(task => task.id !== id))
+  setItems(items.filter(item => item.id !== id))
 }
 
   return (
     <div className="app">
-      <h1>📋 Task Manager</h1>
-      <form onSubmit={handleAddTask}>
+      <h1>Shopping list</h1>
+      <form onSubmit={handleAddItem}>
         <input 
           type="text"
           value= {inputValue}
           onChange = {(e) => setInputValue(e.target.value)}
-          placeholder = "New task.." 
+          placeholder = "New item.." 
         />
-        <button type="submit">Add Task</button>
+        <button className= "submitButton" type="submit">Add Item</button>
       </form>
-      <p>Number of tasks: {tasks.length}</p>
-      <ul className="task-list">
-        {tasks.map((task) => (
+    {/* <p>Number of items: {items.length}</p> */}
+      <ul className="item-list">
+        {items.map((item) => (
           <li
-            key ={task.id}
-            onClick={() => handleToggleTask(task.id)}
+            key ={item.id}
+            onClick={() => handleToggleItem(item.id)}
           >
-            <span onClick={() => handleToggleTask(task.id)}>
-              {task.completed ? '✅' : '⬜'} {task.text}
+            <div className="item-content">
+            <input 
+              type="checkbox" 
+              checked={item.completed}
+              readOnly
+            />
+            <span className={item.completed ? 'completed' : ''}>
+              {item.text}
             </span>
-            <button onClick={(e) => handleDeleteTask(e,task.id)}>Delete</button>
+            </div>
+            <button onClick={(e) => handleDeleteItem(e,item.id)}>✕</button>
           </li>
         ))}
       </ul>
